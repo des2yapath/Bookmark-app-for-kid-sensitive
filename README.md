@@ -30,3 +30,14 @@ This project demonstrates practical object-oriented programming (OOP) in Java an
 - Terminal/Console for I/O
 
 ---
+
+## Future Enhancements
+Add support for additional bookmark types (e.g., Movies, Podcasts)
+
+Store and retrieve user/bookmark data from external files
+
+Create a basic GUI using JavaFX or Swing
+
+Add login functionality for different user roles
+
+
