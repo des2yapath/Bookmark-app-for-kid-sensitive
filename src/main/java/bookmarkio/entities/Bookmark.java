@@ -1,4 +1,4 @@
-package com.semanticsquare.bookmarkIO.entities;
+package bookmarkio.entities;
 
 public class Bookmark {
 

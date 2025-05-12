@@ -1,5 +1,5 @@
-package com.semanticsquare.bookmarkIO.entities;
-public class user {
+package bookmarkio.entities;
+public class User {
     private long id;
     private String email;
     private String password;
