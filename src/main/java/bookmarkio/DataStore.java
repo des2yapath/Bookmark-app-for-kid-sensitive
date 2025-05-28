@@ -16,7 +16,7 @@ import static bookmarkio.constants.MovieGenre.BIOGRAPHY;
 
 public class DataStore {
 
-    private static final int TOTAL_USER_COUNT = 5;
+    public static final int TOTAL_USER_COUNT = 5;
     private static User[] users = new User[TOTAL_USER_COUNT];
 
     public static User[] getUsers() {
@@ -26,11 +26,13 @@ public class DataStore {
     public static Bookmark[][] getBookmarks() {
         return bookmarks;
     }
-    private static final int BOOKMARK_COUNT_PER_TYPE = 5;
-    private static final int BOOKMARK_TYPES_COUNT = 3;
+
+    private static int bookmarkIndex;
+    public static final int BOOKMARK_COUNT_PER_TYPE = 5;
+    public static final int BOOKMARK_TYPES_COUNT = 3;
     private static Bookmark[][] bookmarks = new Bookmark[BOOKMARK_TYPES_COUNT][BOOKMARK_COUNT_PER_TYPE];
-    private static final int USER_BOOKMARK_LIMIT = 5;
-    private static final UserBookmark[] userbookmarks = new UserBookmark[TOTAL_USER_COUNT * USER_BOOKMARK_LIMIT];
+    public static final int USER_BOOKMARK_LIMIT = 5;
+    public static final UserBookmark[] userBookmarks = new UserBookmark[TOTAL_USER_COUNT * USER_BOOKMARK_LIMIT];
 
     public static void loadData() {
         LoadUsers();
@@ -74,6 +76,11 @@ public class DataStore {
         bookmarks[2][3] = BookmarkManager.getInstance().createBook(4003L, "The Republic", "https://example.com/the-republic", -380, "Penguin Classics", new String[]{"Plato"}, "philosophy", 4.4);
         bookmarks[2][4] = BookmarkManager.getInstance().createBook(4004L, "Gone Girl", "https://example.com/gone-girl", 2012, "Crown Publishing Group", new String[]{"Gillian Flynn"}, "mystery", 4.1);
 
+    }
+
+    public static void add(UserBookmark userBookmark) {
+        userBookmarks[bookmarkIndex] = userBookmark;
+        bookmarkIndex++;
     }
 
 }

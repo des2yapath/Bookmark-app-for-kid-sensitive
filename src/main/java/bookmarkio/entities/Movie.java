@@ -48,4 +48,9 @@ public class Movie extends Bookmark {
         this.imdbRating = imdbRating;
     }
 
+    @Override
+    public String toString() {
+        return "Movie{" + "releaseYear=" + releaseYear + ", directors=" + directors + ", cast=" + cast + ", genre=" + genre + ", imdbRating=" + imdbRating + '}';
+    }
+
 }

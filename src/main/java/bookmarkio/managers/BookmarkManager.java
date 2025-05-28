@@ -1,14 +1,17 @@
 package bookmarkio.managers;
 
-import bookmarkio.entities.User;
-import bookmarkio.entities.Bookmark;
+import bookmarkio.dao.BookmarkDao;
 import bookmarkio.entities.Book;
 import bookmarkio.entities.Movie;
 import bookmarkio.entities.WebLink;
+import bookmarkio.entities.Bookmark;
+import bookmarkio.entities.User;
+import bookmarkio.entities.UserBookmark;
 
 public class BookmarkManager {
 
     private static BookmarkManager instance = new BookmarkManager();
+    private static BookmarkDao dao = new BookmarkDao();
 
     private BookmarkManager() {
     }
@@ -55,3 +58,16 @@ public class BookmarkManager {
         weblink.setUrl(url);
         return weblink;
     }
+
+    public Bookmark[][] getBookmarks() {
+        return dao.getBookmarks();
+    }
+
+    public void saveUserBookmark(User user, Bookmark bookmark) {
+        UserBookmark userBookmark = new UserBookmark();
+        userBookmark.setBookmark(bookmark);
+        userBookmark.setUser(user);
+
+        dao.saveUserBookmark(userBookmark);
+    }
+}

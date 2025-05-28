@@ -32,6 +32,11 @@ public class User {
         this.password = password;
     }
 
+    @Override
+    public String toString() {
+        return "User{" + "id=" + id + ", email=" + email + ", password=" + password + ", firstName=" + firstName + ", lastName=" + lastName + ", gender=" + gender + ", userType=" + userType + '}';
+    }
+
     public String getFirstName() {
         return firstName;
     }

@@ -48,4 +48,10 @@ public class Book extends Bookmark {
         this.amazonRating = amazonRating;
     }
 
+    @Override
+    public String toString() {
+        return "Book{" + "publicationYear=" + publicationYear + ", publisher=" + publisher + ", authors=" + authors + ", genre=" + genre + ", amazonRating=" + amazonRating + '}';
+    }
+    
+
 }

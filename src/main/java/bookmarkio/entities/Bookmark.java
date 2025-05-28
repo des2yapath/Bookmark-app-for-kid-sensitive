@@ -1,6 +1,6 @@
 package bookmarkio.entities;
 
-public class Bookmark {
+public abstract class Bookmark {
 
     private long id;
     private String title;
@@ -28,6 +28,13 @@ public class Bookmark {
 
     public void setProfileUrl(String profileUrl) {
         this.profileUrl = profileUrl;
+    }
+    
+    public abstract boolean isKidFriendlyEligible();
+
+    @Override
+    public String toString() {
+        return "Bookmark{" + "id=" + id + ", title=" + title + ", profileUrl=" + profileUrl + '}';
     }
 
 }
